@@ -3,6 +3,7 @@ import re
 import shutil
 import pandas as pd
 from datetime import datetime
+start_program = datetime.now()
 
 df = pd.read_excel("Задание.xlsx")
 files = os.listdir(r'Документы')
@@ -71,3 +72,7 @@ for file in files:
 
     if __COUNT_FOLDERS > 0:
         os.remove(f"Документы\\{file}")
+
+end_program = datetime.now()
+time_program = end_program - start_program
+print (time_program)

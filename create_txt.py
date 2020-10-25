@@ -1,5 +1,7 @@
 import pandas as pd
 import os
+from datetime import datetime
+start_program = datetime.now()
 
 try:
     os.mkdir("Документы")
@@ -13,3 +15,7 @@ for index in df.index:
     docs[index] = docs[index].split(',')
     for i in range(len(docs[index])):
         file = open(f"Документы/КА_{code_KA[index]}_{docs[index][i]}_{date[index]}.txt", "w")
+
+end_program = datetime.now()
+time_program = end_program - start_program
+print (time_program)
